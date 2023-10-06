@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  random-mood:
+    build:
+      context: .  # Use the current directory (where the Dockerfile is located) as the build context
+    #volumes:
+    #  - "C:/Users/Глеб/Desktop/Работа/FlirtBot/random_mood_service/app:app"
+    ports:
+      - "8000:8000"  # Map host port 8000 to container port 8000
+    command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
